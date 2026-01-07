@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 10px solid blue;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        /* DEFAULT */
+        .content-box {
+            box-sizing: content-box;
+        }
+
+        /* PREFERRED */
+        .border-box {
+            box-sizing: border-box;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            max-width: 250px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Box Model: content-box vs border-box</h1>
+    <p>Both boxes have <code>width: 200px</code>, <code>padding: 20px</code>, and <code>border: 10px</code>.</p>
+
+    <div class="container">
+        <div>
+            <h3>content-box (Default)</h3>
+            <div class="box content-box">
+                200px + 40px + 20px = 260px width
+            </div>
+            <div class="description">
+                <strong>Total Width:</strong> Width + Padding + Border.<br>
+                The declared `width` only applies to the blue content area. Padding and border expand the element
+                outwards.
+            </div>
+        </div>
+
+        <div>
+            <h3>border-box</h3>
+            <div class="box border-box">
+                200px Total Width
+            </div>
+            <div class="description">
+                <strong>Total Width:</strong> Fixed at declared Width.<br>
+                Padding and border eat into the content space. content width = 200 - 40 - 20 = 140px.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

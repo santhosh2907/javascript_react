@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Event Listeners Basics</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .log-area {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>01. Event Listeners Basics</h1>
+    <p>Open the Console (F12) or check the log below to see the results.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
+        <button id="btn-standard">Standard Click Me</button>
+        <button id="btn-once">Run Only Once</button>
+        <button id="btn-removable">Click to Add/Remove Content</button>
+        <button id="btn-remove-listener">Remove Listener from Above Button</button>
+    </div>
+
+    <h3>Activity Log:</h3>
+    <div id="log" class="log-area"></div>
+
+    <script src="01_basics_and_listeners.js"></script>
+</body>
+
+</html>

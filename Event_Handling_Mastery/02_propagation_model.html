@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Event Propagation Model</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            padding: 40px;
+            border: 2px solid #333;
+            margin: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+            position: relative;
+        }
+
+        .box:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .grandparent {
+            background-color: #ffebee;
+            border-color: #c62828;
+        }
+
+        .parent {
+            background-color: #e3f2fd;
+            border-color: #1565c0;
+        }
+
+        .child {
+            background-color: #e8f5e9;
+            border-color: #2e7d32;
+        }
+
+        /* Labels */
+        .label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-weight: bold;
+            background: white;
+            padding: 2px 5px;
+            border: 1px solid #ccc;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+        }
+
+        .log-area {
+            background: #222;
+            color: #0f0;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+
+        .phase-capture {
+            color: #ff80ab;
+        }
+
+        /* Pink for Capture */
+        .phase-target {
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        /* Yellow for Target */
+        .phase-bubble {
+            color: #80d8ff;
+        }
+
+        /* Blue for Bubble */
+    </style>
+</head>
+
+<body>
+    <h1>02. Event Propagation: Bubbling vs Capturing</h1>
+
+    <div class="controls">
+        <label>
+            <input type="checkbox" id="chk-capture">
+            Use Capture Phase (check this and see the order reverse!)
+        </label>
+        <br><br>
+        <button id="btn-clear">Clear Log</button>
+    </div>
+
+    <!-- Visual Nested Structure -->
+    <div class="box grandparent" id="grandparent">
+        <span class="label">Grandparent</span>
+        <div class="box parent" id="parent">
+            <span class="label">Parent</span>
+            <div class="box child" id="child">
+                <span class="label">Child (Click Me!)</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>Propagation Log:</h3>
+    <div id="log" class="log-area"></div>
+
+    <script src="02_propagation_model.js"></script>
+</body>
+
+</html>

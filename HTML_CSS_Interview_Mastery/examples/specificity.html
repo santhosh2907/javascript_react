@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity Wars</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        div {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Specificity: (0, 0, 1) - Element selector */
+        p {
+            color: grey;
+        }
+
+        /* Specificity: (0, 1, 0) - Class selector */
+        .text {
+            color: blue;
+        }
+
+        /* Specificity: (1, 0, 0) - ID selector */
+        #unique {
+            color: red;
+        }
+
+        /* Specificity: (0, 2, 0) - Two classes */
+        .text.danger {
+            color: orange;
+        }
+
+        /* !important overrides all */
+        .override {
+            color: purple !important;
+        }
+
+        /* Inline style overrides ID (unless !important is used elsewhere) */
+    </style>
+</head>
+
+<body>
+
+    <h1>Specificity Visualized</h1>
+
+    <!-- 1. Class vs Element -->
+    <p class="text">1. Class (.text: blue) wins over Element (p: grey)</p>
+
+    <!-- 2. ID vs Class -->
+    <p class="text" id="unique">2. ID (#unique: red) wins over Class (.text: blue)</p>
+
+    <!-- 3. Multiple Classes vs One Class -->
+    <p class="text">3. Combined classes (.text.danger: orange) would win over .text (blue)</p>
+    <!-- Note: I need to add the class 'danger' to see this effect -->
+    <p class="text danger">3b. Combined classes (orange) wins.</p>
+
+    <!-- 4. Inline Style -->
+    <p class="text" id="unique" style="color: green;">4. Inline Style (green) wins over ID (#unique: red)</p>
+
+    <!-- 5. !important -->
+    <p class="text" id="unique" style="color: green;" class="override">
+        <!-- This needs correct class markup -->
+        <span class="override">5. !important (purple) wins over Inline Style (green)</span>
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Advanced Control</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+        }
+
+        .layer {
+            padding: 30px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            position: relative;
+        }
+
+        .outer {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+
+        .inner {
+            background: #ffcdd2;
+            border-color: #f44336;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: white;
+            border: 1px solid #333;
+        }
+
+        .log-area {
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            height: 250px;
+            overflow-y: auto;
+            margin-top: 20px;
+            font-family: monospace;
+        }
+
+        .highlight {
+            color: #f4ff81;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>04. Advanced Control: Stop Propagation</h1>
+    <p>Understand <code>stopPropagation</code> vs <code>stopImmediatePropagation</code> vs <code>preventDefault</code>.
+    </p>
+
+    <!-- Demo 1: Stop Propagation -->
+    <div class="layer outer" id="outer-box">
+        Output Box (Parent)
+        <div class="layer inner" id="inner-box">
+            Inner Box (Child) <br><br>
+            <button id="btn-stop">Click Me (Stops Bubbling)</button>
+            <button id="btn-normal">Click Me (Normal Bubbling)</button>
+        </div>
+    </div>
+
+    <!-- Demo 2: Stop Immediate Propagation -->
+    <div style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">
+        <h3>stopImmediatePropagation Demo</h3>
+        <button id="btn-immediate" class="btn">Click to test Immediate Stop</button>
+        <p><em>Check console/log to see which listeners run.</em></p>
+    </div>
+
+    <!-- Demo 3: Prevent Default -->
+    <div style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">
+        <h3>preventDefault Demo</h3>
+        <a href="https://example.com" id="link-prevent" target="_blank">Go to Example.com (This link is prevented)</a>
+    </div>
+
+    <h3>Log:</h3>
+    <div id="log" class="log-area"></div>
+
+    <script src="04_advanced_control.js"></script>
+</body>
+
+</html>

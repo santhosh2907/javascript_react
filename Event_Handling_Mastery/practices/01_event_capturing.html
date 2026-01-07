@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Event Capturing</title>
+    <!-- <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+        }
+
+        .layer {
+            padding: 30px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            position: relative;
+        }
+
+        .outer {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+
+        .inner {
+            background: #ffcdd2;
+            border-color: #f44336;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: white;
+            border: 1px solid #333;
+        }
+
+        .log-area {
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            height: 250px;
+            overflow-y: auto;
+            margin-top: 20px;
+            font-family: monospace;
+        }
+
+        .highlight {
+            color: #f4ff81;
+            font-weight: bold;
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1>01. Event Capturing</h1>
+    <p>Understand the difference between Capturing and Bubbling phases.</p>
+
+    <!-- Demo 1: Capturing Phase -->
+    <div class="layer outer" id="outer-box">
+        <span class="label">Outer Box</span>
+        <div class="layer inner" id="inner-box">
+            <span class="label">Inner Box</span>
+            <button class="btn" id="btn-capturing">Click Me (Capturing)</button>
+        </div>
+    </div>
+
+    <h3>Activity Log:</h3>
+    <div id="log" class="log-area"></div>
+
+    <script src="01_event_capturing.js"></script>
+</body>
+
+</html>

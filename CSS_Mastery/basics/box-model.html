@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Masterclass</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f4f4f5;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1f2937;
+        }
+
+        .box-container {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 200px;
+            /* Defined Width */
+            height: 150px;
+            padding: 20px;
+            /* Internal spacing */
+            border: 10px solid #3b82f6;
+            /* Layer around padding */
+            margin: 20px;
+            /* External spacing */
+            background-color: #93c5fd;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        /* 1. Content-Box (Default) */
+        .content-box {
+            box-sizing: content-box;
+        }
+
+        /* 2. Border-Box (Best Practice) */
+        .border-box {
+            box-sizing: border-box;
+            border-color: #ef4444;
+            background-color: #fca5a5;
+            color: #7f1d1d;
+        }
+
+        .visual-guide {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Basics: The Box Model</h1>
+    <p>Understanding how width/height is calculated is crucial for layouts.</p>
+
+    <div class="visual-guide">
+        <h2>Comparison</h2>
+        <p>Both boxes have <code>width: 200px</code>, <code>padding: 20px</code>, and <code>border: 10px</code>.</p>
+
+        <div class="box-container">
+            <div>
+                <h3>1. content-box (Default)</h3>
+                <div class="box content-box">
+                    Actual Width: 260px
+                </div>
+                <div class="code-block">
+                    Total = Width + Pad + Border
+                </div>
+            </div>
+
+            <div>
+                <h3>2. border-box (Preferred)</h3>
+                <div class="box border-box">
+                    Actual Width: 200px
+                </div>
+                <div class="code-block">
+                    Total = Width (includes Pad/Border)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

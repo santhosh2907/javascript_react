@@ -1,0 +1,127 @@
+**************************************************************************
+1. Scope in js ( Global, functional, block )
+**************************************************************************
+* Scope in JavaScript defines where a variable can be accessed in a program. There are three main types of scope: global, function, and block scope.
+ 1. Global scope: Variables declared outside any function or block are accessible everywhere in the application.
+ 2. Function scope: Variables declared inside a function are accessible only within that function.
+ 3. Block scope: Variables declared with let or const inside a block {} are accessible only within that block. (var does not have block scope.)
+
+JavaScript follows lexical scoping, meaning inner scopes can access variables from their outer scopes
+
+**************************************************************************
+2. Primitive , non-primitive in js
+**************************************************************************
+JavaScript data types are broadly classified into primitive and non-primitive types based on how values are stored and accessed in memory.
+
+#Primitive types: 
+1. Number
+2. String
+3. Boolean
+4. Undefined
+5. Null
+6. Symbol (ES6)
+7. BigInt (ES11)
+
+Key characteristics:
+
+1. Immutable (cannot be changed)
+2. Stored directly in memory
+3. Compared by value
+
+
+#Non-Primitive (Reference) Data Types
+
+Non-primitive types store collections of values and are accessed by reference.
+
+Types:
+1. object
+2. array
+3. function
+
+Key characteristics:
+1. Mutable
+2. Stored as references in memory
+3. Compared by reference
+
+
+**************************************************************************
+3. var, let, const
+**************************************************************************
+
+| Feature   | `var`             | `let`     | `const`   |
+| --------- | ----------------- | --------- | --------- |
+| Scope     | Function          | Block     | Block     |
+| Hoisting  | Yes (initialized) | Yes (TDZ) | Yes (TDZ) |
+| Redeclare | Yes               | No        | No        |
+| Reassign  | Yes               | Yes       | No        |
+
+
+**************************************************************************
+4. Temporal dead zone
+**************************************************************************
+The Temporal Dead Zone is the phase where let and const variables exist but cannot be accessed until their declaration is evaluated.
+
+
+**************************************************************************
+5. Hoisting
+**************************************************************************
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope during the compilation phase, allowing them to be referenced before their actual declaration in the code.
+
+
+
+**************************************************************************
+6. Closure
+**************************************************************************
+A closure is a function that retains access to its outer scope variables even after the outer function has executed.
+
+
+**************************************************************************
+7. Pass by value pass by reference
+**************************************************************************
+JavaScript passes primitives by value and objects by reference, meaning primitives are copied while object references are shared.
+
+
+**************************************************************************
+8. Currying in JavaScript
+**************************************************************************
+
+
+**************************************************************************
+9. Memorization in Javascript
+**************************************************************************
+Memoization is a performance optimization technique that stores the results of function calls and returns cached results when the same inputs occur again.
+
+
+**************************************************************************
+10. Rest Parameters
+**************************************************************************
+The rest parameter collects multiple function arguments into a single array, enabling functions to handle variable numbers of inputs.
+
+
+**************************************************************************
+11. Spread Parameters
+**************************************************************************
+The spread operator expands iterable values into individual elements, commonly used for copying, merging, and passing data immutably.
+
+
+**************************************************************************
+12. Is javascript single threaded?
+**************************************************************************
+Yes, JavaScript is a single-threaded language, which means it can execute only one task at a time on a single call stack.
+
+#how does JavaScript handle async operations?
+JavaScript uses the Event Loop, Callback Queue, and Web APIs to achieve asynchronous behavior, not multiple threads.
+
+**************************************************************************
+13. Event Loops
+**************************************************************************
+The Event Loop is a mechanism that allows JavaScript to perform non-blocking asynchronous operations even though it is single-threaded.
+
+
+**************************************************************************
+14. Callbacks, why we need                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+
+
+Callback
+EventLoop

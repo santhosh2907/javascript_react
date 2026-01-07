@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Flexbox Masterclass</title>
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            padding: 2rem;
+            background: #111827;
+            color: #f3f4f6;
+        }
+
+        .panel {
+            background: #1f2937;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #374151;
+        }
+
+        .flex-container {
+            display: flex;
+            background: #374151;
+            min-height: 150px;
+            padding: 10px;
+            border-radius: 8px;
+            gap: 10px;
+        }
+
+        .item {
+            background: #8b5cf6;
+            color: white;
+            padding: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-example {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .space-example {
+            justify-content: space-between;
+        }
+
+        .wrap-example {
+            flex-wrap: wrap;
+        }
+
+        .wrap-example .item {
+            width: 100px;
+        }
+
+        .grow-1 {
+            flex-grow: 1;
+            background: #10b981;
+        }
+
+        .grow-2 {
+            flex-grow: 2;
+            background: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Flexbox</h1>
+
+    <div class="panel">
+        <h2>1. Centering</h2>
+        <div class="flex-container center-example">
+            <div class="item">Center Me</div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>2. Space Between</h2>
+        <div class="flex-container space-example">
+            <div class="item">Start</div>
+            <div class="item">Middle</div>
+            <div class="item">End</div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>3. Flex Grow</h2>
+        <div class="flex-container">
+            <div class="item" style="flex: 0 0 auto;">Fixed</div>
+            <div class="item grow-1">1x Grow</div>
+            <div class="item grow-2">2x Grow</div>
+        </div>
+    </div>
+</body>
+
+</html>

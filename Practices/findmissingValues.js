@@ -14,7 +14,7 @@ function findMissingValues(arr) {
 console.log(findMissingValues([1, 2, 3, 5, 6, 7, 8]));
 
 
-//2. Find the missing values from 1 to N in non sequential order
+//2. Find the missing values
 function findMissingNumbers(arr) {
   let result = [];
 
@@ -32,3 +32,25 @@ function findMissingNumbers(arr) {
 }
 
 console.log(findMissingNumbers([1, 2, 4, 6, 8, 10]));
+
+
+//3. If the array contains 0
+
+const arr = [3,2,1,4,0,5]
+
+
+function findMissingValues(values){
+    
+    let n = values.length + 1
+    let sum = 0
+    for(let i = 0; i < values.length; i++){
+        sum += values[i]
+    }
+    let result = n * (n + 1) / 2
+    return result - sum
+
+}
+
+//Expected Output [6]
+
+console.log(findMissingValues(arr))

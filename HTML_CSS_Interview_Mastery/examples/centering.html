@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Centering Techniques</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            border: 1px solid #ddd;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Method 1: Flexbox */
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Method 2: Grid */
+        .grid-center {
+            display: grid;
+            place-items: center;
+        }
+
+        /* Method 3: Absolute Positioning */
+        .absolute-center {
+            position: relative;
+        }
+
+        .absolute-center .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Method 4: Margin Auto (Horizontal only usually, or flex) */
+        .margin-auto {
+            display: flex;
+            /* Needed for vertical usually, or block height */
+        }
+
+        .margin-auto .box {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Centering Techniques</h1>
+
+    <h3>1. Flexbox Center</h3>
+    <div class="container flex-center">
+        <div class="box">Flex</div>
+    </div>
+
+    <h3>2. Grid Center</h3>
+    <div class="container grid-center">
+        <div class="box">Grid</div>
+    </div>
+
+    <h3>3. Absolute Positioning + Transform</h3>
+    <div class="container absolute-center">
+        <div class="box">Absolute</div>
+    </div>
+
+    <h3>4. Margin: Auto (with Flex container)</h3>
+    <div class="container margin-auto">
+        <div class="box">Auto</div>
+    </div>
+
+</body>
+
+</html>

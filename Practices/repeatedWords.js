@@ -35,3 +35,27 @@ function checkrepeaterValues(values){
     return {frequency, uniqueWords, repeatedValues}
 }
 console.log(checkrepeaterValues(text))
+
+
+
+
+//Method 2
+
+const value = "aabbcdd"
+
+function checkUniqueValue(value){
+    const total = value.split("")
+    let frequency = {}
+    for(let i = 0; i < total.length; i++){
+        frequency[total[i]] = ( frequency[total[i]] || 0 ) + 1
+    }
+    let result = null
+    for (let s in frequency){
+        if(frequency[s] == 1){
+            result = s
+        }
+    }
+    return result
+}
+
+console.log(checkUniqueValue(value))

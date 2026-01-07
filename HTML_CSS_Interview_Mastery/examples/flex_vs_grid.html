@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs Grid</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        .wrapper {
+            margin-bottom: 40px;
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .item {
+            background: #ff6b6b;
+            padding: 20px;
+            border: 1px solid #fff;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Flexbox: 1D Layout */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* Essential for responsiveness */
+            gap: 10px;
+        }
+
+        .flex-container .item {
+            flex: 1 1 200px;
+            /* Grow, Shrink, Basis */
+        }
+
+        /* Grid: 2D Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            /* grid-template-rows: auto auto; - Implicitly handled */
+        }
+
+        .grid-special {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            height: 300px;
+        }
+
+        .grid-special .item:first-child {
+            grid-column: 1 / -1;
+            /* Span full width */
+            background: #4ecdc4;
+        }
+
+        .grid-special .item:nth-child(2) {
+            grid-row: 2 / 4;
+            /* Span vertically */
+            background: #ffe66d;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Flexbox (1D - Content First)</h2>
+        <p>Best for alignment and distributing space (e.g., Navbars, lists).</p>
+        <div class="flex-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Grid (2D - Layout First)</h2>
+        <p>Best for strict row/column structures (e.g., Page layouts, Galleries).</p>
+        <div class="grid-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Grid Superpowers (Span)</h2>
+        <div class="grid-special">
+            <div class="item">Header (Span all)</div>
+            <div class="item">Sidebar</div>
+            <div class="item">Content</div>
+            <div class="item">Ad</div>
+            <div class="item">Footer</div>
+            <div class="item">Footer 2</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
