@@ -31,3 +31,10 @@ function rotateArray(arr, k) {
 }
 
 console.log(rotateArray([1,2,3,4,5], 2));
+
+
+// Another Solution
+const arr = [1, 2, 3, 4, 5]
+const k = 2
+const result = arr.concat(arr.splice(0, 2))
+console.log(result)

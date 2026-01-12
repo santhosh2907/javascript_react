@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Memory Visualizer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #222;
+            color: white;
+            padding: 2rem;
+        }
+
+        .container {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+        }
+
+        .array-box {
+            background: #333;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .item {
+            background: #444;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .item.object-ref {
+            border-left-color: #3498db;
+        }
+
+        /* Blue for Reference */
+        .item.changed-bad {
+            background: #e74c3c;
+        }
+
+        /* Red for Mutation Side Effect */
+        .item.changed-good {
+            background: #2ecc71;
+        }
+
+        /* Green for Independent Change */
+
+        button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn-shallow {
+            background: #f1c40f;
+            color: black;
+        }
+
+        .btn-deep {
+            background: #9b59b6;
+            color: white;
+        }
+
+        .btn-reset {
+            background: #95a5a6;
+            color: white;
+        }
+
+        code {
+            background: #111;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            align-self: center;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center">Shallow vs Deep Copy Visualizer</h1>
+    <p style="text-align: center; color: #aaa">
+        Objects inside arrays are <span style="color: #3498db">Blue</span> (Reference Types).<br>
+        Modify the Copy. If the Original turns <span style="color: #e74c3c">Red</span>, they are linked (Bad).<br>
+        If the Original stays dark (and copy turns <span style="color: #2ecc71">Green</span>), they are safe (Good).
+    </p>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <button class="btn-shallow" onclick="createShallow()">1. Create Shallow Copy [...]</button>
+        <button class="btn-deep" onclick="createDeep()">2. Create Deep Copy (structuredClone)</button>
+        <button class="btn-reset" onclick="reset()">Reset</button>
+        <br><br>
+        <button onclick="modifyCopy()" id="modBtn" disabled style="background: white; color: black">3. Modify Item in
+            Copy</button>
+    </div>
+
+    <div class="container">
+        <!-- Original Array -->
+        <div class="array-box">
+            <h3>Original Array</h3>
+            <div id="original-list"></div>
+        </div>
+
+        <div class="arrow">➔</div>
+
+        <!-- Copy Array -->
+        <div class="array-box">
+            <h3>Copied Array</h3>
+            <div id="copy-text" style="color: #777; font-style: italic;">No copy created yet...</div>
+            <div id="copy-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let originalData = [
+            { id: 1, val: "A" },
+            { id: 2, val: "B" }
+        ];
+        let copyData = null;
+        let isDeep = false;
+
+        function render() {
+            const orgContainer = document.getElementById('original-list');
+            const copyContainer = document.getElementById('copy-list');
+            const copyText = document.getElementById('copy-text');
+
+            // Render Original
+            orgContainer.innerHTML = '';
+            originalData.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'item object-ref';
+                div.innerHTML = `<span>Index ${idx}</span> <code>{ val: "${item.val}" }</code>`;
+
+                // Visualization Logic: Check if it matches copy (linkage)
+                if (copyData && copyData[idx] === item && item.val !== "A" && item.val !== "B") {
+                    // It changed, AND it's the exact same object reference
+                    div.classList.add('changed-bad');
+                }
+
+                orgContainer.appendChild(div);
+            });
+
+            // Render Copy
+            copyContainer.innerHTML = '';
+            if (!copyData) {
+                copyText.style.display = 'block';
+            } else {
+                copyText.style.display = 'none';
+                copyData.forEach((item, idx) => {
+                    const div = document.createElement('div');
+                    div.className = 'item object-ref';
+                    div.innerHTML = `<span>Index ${idx}</span> <code>{ val: "${item.val}" }</code>`;
+
+                    if (item.val !== "A" && item.val !== "B") {
+                        if (originalData[idx] !== item) {
+                            div.classList.add('changed-good');
+                        } else {
+                            div.classList.add('changed-bad');
+                        }
+                    }
+
+                    copyContainer.appendChild(div);
+                });
+            }
+        }
+
+        function reset() {
+            originalData = [{ id: 1, val: "A" }, { id: 2, val: "B" }];
+            copyData = null;
+            document.getElementById('modBtn').disabled = true;
+            render();
+        }
+
+        function createShallow() {
+            reset(); // Clear previous state first to be clean
+            // Shallow Copy
+            copyData = [...originalData];
+            isDeep = false;
+            document.getElementById('modBtn').disabled = false;
+            render();
+        }
+
+        function createDeep() {
+            reset();
+            // Deep Copy
+            copyData = structuredClone(originalData);
+            isDeep = true;
+            document.getElementById('modBtn').disabled = false;
+            render();
+        }
+
+        function modifyCopy() {
+            if (!copyData) return;
+
+            // Mutation!
+            copyData[0].val = "MUTATED";
+            render();
+        }
+
+        // Initial Render
+        render();
+
+    </script>
+</body>
+
+</html>
