@@ -1,0 +1,2 @@
+.likebutton-container button { padding: 10px 20px; font-size: 16px; border: 1px solid #ccc; cursor: pointer; background: #fff; border-radius: 20px; transition: 0.2s; }
+.likebutton-container button.liked { background: #fee; color: red; border-color: red; }

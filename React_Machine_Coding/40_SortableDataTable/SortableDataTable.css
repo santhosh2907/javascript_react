@@ -1,0 +1,4 @@
+.datatable { width: 100%; border-collapse: collapse; margin: 20px; max-width: 400px; }
+.datatable th, .datatable td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+.datatable th { cursor: pointer; background: #f4f4f4; }
+.datatable th:hover { background: #e0e0e0; }

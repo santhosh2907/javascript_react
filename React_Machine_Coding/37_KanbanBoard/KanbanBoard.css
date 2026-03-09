@@ -1,0 +1,3 @@
+.kanban-container { display: flex; gap: 20px; padding: 20px; }
+.column { flex: 1; background: #f4f5f7; border-radius: 8px; padding: 10px; min-height: 200px; }
+.task-card { background: white; padding: 10px; margin-bottom: 10px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }

@@ -1,0 +1,60 @@
+# React Machine Coding Interview Questions
+
+Here is a comprehensive list of 50+ simple, intermediate, and advanced React components commonly asked in machine coding rounds. These will help you prepare and tackle various UI, state management, and performance optimization scenarios.
+
+## Component List
+
+1. **Star Rating** (Implemented here!)
+2. **Accordion** (Expandable/Collapsible panels)
+3. **Pagination** (Page numbers with Previous/Next controls)
+4. **Carousel / Image Slider** (With auto-play and manual controls)
+5. **Modal / Popup Overlay** (With click-outside to close)
+6. **Tabs Component** (Switching content based on active tab)
+7. **Tic-Tac-Toe Game**
+8. **Toast Notification / Snackbar** (Auto-dismissing)
+9. **Typeahead / Auto-complete Input** (With debounce)
+10. **Stopwatch / Timer** (Start, Stop, Reset, Lap)
+11. **Infinite Scroll** (Fetching data as you scroll down)
+12. **Nested File Explorer** (Recursive folder structure rendering)
+13. **Custom Hooks: `useFetch`** (Data fetching with loading/error states)
+14. **Custom Hooks: `useLocalStorage`** (Sync state with localStorage)
+15. **Color Picker** (Select and preview color)
+16. **Transfer List** (Move items between two lists)
+17. **Traffic Light** (Auto state transitions after specific intervals)
+18. **Progress Bar** (Animated filling bar)
+19. **Stepper Component** (Multi-step form indicator)
+20. **Drag and Drop List** (Reorder items)
+21. **Password Generator** (Range slider for length, checkboxes for characters)
+22. **Form Validation** (Login/Signup form with exact error feedback)
+23. **Calendar / Date Picker** (Month view with day selection)
+24. **Like Button** (Optimistic UI updates)
+25. **Breadcrumbs** (Navigation trail)
+26. **Tooltip** (Hover over element to show text)
+27. **Context Menu** (Custom right-click menu)
+28. **Range Slider** (Selecting min and max values)
+29. **Grid System (Pinterest style)** or Masonry Layout
+30. **Virtualized List / Windowing** (Rendering 10,000+ items efficiently)
+31. **Snake Game** (Grid-based movement and apples)
+32. **Memory Game** (Card matching)
+33. **Tic-Tac-Toe with Time Travel** (History of moves)
+34. **Connect Four Game**
+35. **Nested Comments Section** (Like Reddit or YouTube)
+36. **Feature Flag System** (Hiding/Showing features based on config)
+37. **Rating Bar** (Progress bar style rating like in reviews)
+38. **Nested Dropdown Menu** (Multi-level navigation)
+39. **Multi-select Dropdown** (Chips for selected items)
+40. **Shopping Cart** (Add, Remove, Adjust Quantity, Calculate Total)
+41. **Todo List** (Add, Edit, Delete, Filter by Active/Completed)
+42. **Kanban Board** (Trello clone with Drag & Drop columns)
+43. **Chat UI** (Sending/Receiving messages)
+44. **Weather Widget** (Fetching and displaying weather by city)
+45. **Sortable Data Table** (Sort by columns, pagination, filtering)
+46. **Markdown Previewer** (Textarea input, Markdown output)
+47. **Dark Mode Toggle** (With Context API and persisting preference)
+48. **Image Zoom on Hover** (E-commerce style product image zoom)
+49. **Password Strength Checker** (Visual feedback based on complexity)
+50. **OTP Input Component** (Auto-focus next input, paste support)
+51. **Sticky Header** (Hides on scroll down, shows on scroll up)
+52. **Responsive Navigation Bar** (Hamburger menu on mobile)
+
+Dive in and start building these out. They test your fundamental understanding of React state (`useState`), side effects (`useEffect`), component lifecycle, DOM event handling, performance optimization (`useMemo`, `useCallback`), and Context API.

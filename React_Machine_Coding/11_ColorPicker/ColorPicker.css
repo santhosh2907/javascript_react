@@ -1,0 +1,2 @@
+.colorpicker-container { padding: 50px; text-align: center; border-radius: 8px; transition: background-color 0.3s; }
+.colorpicker-container input { margin-top: 20px; cursor: pointer; }

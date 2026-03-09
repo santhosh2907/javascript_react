@@ -1,0 +1,3 @@
+.fileexplorer-container { padding: 20px; font-family: monospace; }
+.folder > span { font-weight: bold; cursor: pointer; display: inline-block; margin-bottom: 5px; }
+.file { margin-bottom: 5px; color: #555; }

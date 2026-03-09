@@ -1,0 +1,37 @@
+.star-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star-rating button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.star-rating button.on {
+  color: #ffb400; /* Gold color for selected stars */
+}
+
+.star-rating button.off {
+  color: #ccc; /* Gray color for unselected stars */
+}
+
+.star {
+  font-size: 40px;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}

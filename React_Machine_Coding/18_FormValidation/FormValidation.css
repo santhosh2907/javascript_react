@@ -1,0 +1,3 @@
+.formvalidation-container { display: flex; flex-direction: column; gap: 15px; max-width: 300px; }
+.err { color: red; font-size: 12px; display: block; }
+input { padding: 8px; width: 100%; box-sizing: border-box; }

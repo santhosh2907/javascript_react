@@ -1,0 +1,2 @@
+.masonry-container { column-count: 3; column-gap: 15px; padding: 15px; }
+.masonry-item { background: #007bff; margin-bottom: 15px; break-inside: avoid; border-radius: 8px; }

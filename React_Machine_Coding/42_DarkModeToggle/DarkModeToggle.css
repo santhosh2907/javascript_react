@@ -1,0 +1,3 @@
+.darkmode-container { padding: 50px; text-align: center; border: 1px solid #ccc; transition: 0.3s; }
+.darkmode-container.light { background: #fff; color: #000; }
+.darkmode-container.dark { background: #222; color: #fff; }

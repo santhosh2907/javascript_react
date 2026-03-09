@@ -1,0 +1,3 @@
+.md-container { display: flex; gap: 20px; padding: 20px; height: 300px; }
+.md-input, .md-preview { flex: 1; padding: 15px; border: 1px solid #ccc; border-radius: 4px; }
+.md-preview { background: #f9f9f9; overflow-y: auto; }

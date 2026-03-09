@@ -1,0 +1,3 @@
+.dnd-container { padding: 20px; max-width: 300px; }
+.dnd-list { list-style: none; padding: 0; }
+.dnd-list li { padding: 15px; border: 1px solid #ccc; margin-bottom: 5px; background: white; cursor: grab; }
